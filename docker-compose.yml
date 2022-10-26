@@ -1,0 +1,10 @@
+version: "3.3"
+services:
+  web:
+    build: 
+      context: ./booksquire-api
+      dockerfile: Development.Dockerfile
+    volumes:
+      - ./booksquire-api:/app
+    ports:
+      - "3000:8080"
