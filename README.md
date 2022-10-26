@@ -1,1 +1,1 @@
-# Book-Squire
+# BookSquire
