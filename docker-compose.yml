@@ -8,3 +8,11 @@ services:
       - ./booksquire-api:/app
     ports:
       - "3000:8080"
+  app:
+    build:
+      context: ./booksquire
+      dockerfile: Development.Dockerfile
+    volumes:
+      - ./booksquire:/app
+    ports:
+      - "3001:3001"

@@ -1,0 +1,7 @@
+{
+  "name": "booksquire",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
