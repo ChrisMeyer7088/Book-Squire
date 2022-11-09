@@ -8,6 +8,8 @@ services:
       - ./booksquire-api:/app
     ports:
       - "3000:8080"
+    environment:
+      - DATABASE_URL=postgres://user:password@localhost:5432/booksquire
   app:
     build:
       context: ./booksquire
@@ -16,3 +18,16 @@ services:
       - ./booksquire:/app
     ports:
       - "3001:3001"
+  db:
+    image: postgres:14.1-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=booksquire
+    ports:
+      - '5432:5432'
+    volumes: 
+      - postgres:/var/lib/postgresql/data
+volumes:
+  postgres:
