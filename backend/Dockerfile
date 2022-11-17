@@ -4,8 +4,7 @@ ENV USER=root
 
 WORKDIR /var/www/app
 RUN cargo init
-COPY Cargo.toml Cargo.toml
-COPY src src
+COPY . .
 
 RUN cargo fetch
 

@@ -9,4 +9,4 @@ RUN cargo install cargo-watch
 
 COPY . .
 
-CMD cargo watch -x 'run --bin booksquire-api'
+CMD cargo watch -x 'run --bin backend'
