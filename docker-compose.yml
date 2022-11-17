@@ -2,20 +2,20 @@ version: "3.3"
 services:
   web:
     build: 
-      context: ./booksquire-api
+      context: ./backend
       dockerfile: Development.Dockerfile
     volumes:
-      - ./booksquire-api:/app
+      - ./backend:/app
     ports:
       - "3000:8080"
     environment:
       - DATABASE_URL=postgres://user:password@localhost:5432/booksquire
   app:
     build:
-      context: ./booksquire
+      context: ./frontend
       dockerfile: Development.Dockerfile
     volumes:
-      - ./booksquire:/app
+      - ./frontend:/app
     ports:
       - "3001:3001"
   db:
